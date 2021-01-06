@@ -1,0 +1,26 @@
+{
+  "name": "watch-on-nebula",
+  "version": "1.0.0",
+  "description": "Prompts you to watch a YouTube video on Nebula instead, if available.",
+  "main": "index.js",
+  "dependencies": {
+    "web-ext": "^5.4.1"
+  },
+  "devDependencies": {
+    "webextension-polyfill": "^0.7.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "web-ext run --source-dir ./watchonnebula/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parkeraddison/watch-on-nebula.git"
+  },
+  "author": "Parker Addison",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/parkeraddison/watch-on-nebula/issues"
+  },
+  "homepage": "https://github.com/parkeraddison/watch-on-nebula#readme"
+}

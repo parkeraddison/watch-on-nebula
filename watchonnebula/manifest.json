@@ -1,0 +1,48 @@
+{
+	"manifest_version": 2,
+	"name": "watch-on-nebula",
+	"description": "Prompts you to watch a YouTube video on Nebula instead, if available.",
+	"version": "0.0.1",
+	"icons": {
+		"64": "icons/icon.png"
+	},
+	"background": {
+		"scripts": [
+			"browser-polyfill.min.js",
+			"background_script.js"
+		]
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"*://*.youtube.com/*"
+			],
+			"js": [
+				"browser-polyfill.min.js",
+				"content_script.js"
+			]
+		}
+	],
+	"permissions": [
+		"https://www.youtube.com/",
+		"https://youtube.com/",
+		"https://standard.tv/"
+	],
+	"browser_action": {
+		"default_icon": {
+			"64": "icons/icon.png"
+		},
+		"default_popup": "browserAction/index.html",
+		"default_title": "watch-on-nebula"
+	},
+	"page_action": {
+		"default_icon": {
+			"64": "icons/icon.png"
+		},
+		"default_popup": "pageAction/index.html",
+		"default_title": "watch-on-nebula"
+	},
+	"options_ui": {
+		"page": "options/index.html"
+	}
+}
