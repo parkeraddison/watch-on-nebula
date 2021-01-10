@@ -1,6 +1,6 @@
 {
 	"manifest_version": 2,
-	"name": "watch-on-nebula",
+	"name": "Watch on Nebula",
 	"description": "Prompts you to watch a YouTube video on Nebula instead, if available.",
 	"version": "0.0.1",
 	"icons": {
@@ -8,8 +8,8 @@
 	},
 	"background": {
 		"scripts": [
-			"browser-polyfill.min.js",
-			"background_script.js"
+			"polyfill/browser-polyfill.min.js",
+			"scripts/background_script.js"
 		]
 	},
 	"content_scripts": [
@@ -18,11 +18,11 @@
 				"*://*.youtube.com/*"
 			],
 			"js": [
-				"browser-polyfill.min.js",
-				"content_script.js"
+				"polyfill/browser-polyfill.min.js",
+				"scripts/content_script.js"
 			],
 			"css": [
-				"popup-style.css"
+				"css/popup-style.css"
 			],
 			"run_at": "document_end"
 		}

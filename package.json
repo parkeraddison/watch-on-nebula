@@ -10,7 +10,8 @@
     "webextension-polyfill": "^0.7.0"
   },
   "scripts": {
-    "start": "web-ext run --source-dir ./watchonnebula/"
+    "start": "web-ext run --source-dir ./extension/",
+    "build": "web-ext build --source-dir ./extension/"
   },
   "repository": {
     "type": "git",
