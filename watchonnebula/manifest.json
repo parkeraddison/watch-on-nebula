@@ -20,7 +20,8 @@
 			"js": [
 				"browser-polyfill.min.js",
 				"content_script.js"
-			]
+			],
+			"run_at": "document_end"
 		}
 	],
 	"permissions": [
