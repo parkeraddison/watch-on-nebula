@@ -42,8 +42,8 @@ function checkCreator(message, sender) {
 
             let channelMatch = channelIDs.indexOf(message.channelID);
         
-            // If the creator is also on Nebula then we should get the corresponding
-            // data from Nebula and tell the content script to make an alert.
+            // If the creator is also on Nebula then we should get the corres-
+            // ponding data from Nebula and tell the content script to prompt.
             if (channelMatch > -1) {
                 console.log("IT'S A MATCH!")
                 
@@ -51,13 +51,20 @@ function checkCreator(message, sender) {
         
                 console.log(data);
         
-                // TODO: We should also try to find the link directly to the
-                // corresponding video. For now, we'll just link to the creator
-                // page.
+                // It's challenging to link directly to the video since the
+                // video results on Nebula pages are deferred -- thus not easily
+                // scrapable!
+                //
+                // What we *can* do is just link to the search query, so you'd
+                // be taken to the search page. I don't think we can filter our
+                // search by creators yet.
+                //
+                // The alternative is to just link to the creator's page.
                 browser.tabs.sendMessage(sender.tab.id, {
                     'creatorName': data.title,
                     'videoTitle': message.videoTitle,
-                    'href': data.nebula
+                    'href': `https://watchnebula.com/search?q=${encodeURIComponent(message.videoTitle)}`
+                    // 'href': data.nebula
                 })
             }
         } else {
