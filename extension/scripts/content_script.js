@@ -25,6 +25,7 @@ window.addEventListener('yt-navigate-finish', function (event) {
 function run() {
 
     console.log('CONTENT SCRIPT RUN');
+    closePopup();
 
     if (!location.pathname.startsWith('/watch')) {
         console.log('NOT A VIDEO');
@@ -70,9 +71,11 @@ function respond(message) {
 window.extensionPopup = null;
 
 function closePopup() {
-    console.log('CLOSING POPUP');
-    window.extensionPopup.style.visibility = 'hidden';
-    window.extensionPopup.classList.remove('displayed');
+    if (window.extensionPopup) {
+        console.log('CLOSING POPUP');
+        window.extensionPopup.style.visibility = 'hidden';
+        window.extensionPopup.classList.remove('displayed');
+    }
 }
 
 function drawPopup(creatorName, videoTitle, href) {
