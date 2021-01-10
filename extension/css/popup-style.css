@@ -1,31 +1,56 @@
 nebext-popup {
     box-sizing: border-box;
     --nebula-blue: #6fbce6;
+    --transition-speed: 100ms;
 
     visibility: visible;
 
     position: fixed;
-    top: 1rem;
-    right: 1rem;
-    margin: auto;
-    z-index: 99999;
+    top: 5em;
+    left: 50%;
     width: 30em;
+    margin-left: -15em;
+    z-index: 99999;
     background: #fff;
     border: 4px solid #eee;
     border-radius: 8px;
     padding: 1rem 2rem;
-
     color: #333;
+    box-shadow: 0px 2px 8px -6px;
+}
+
+@keyframes woosh-in {
+    0% {
+        top: -50%;
+    }
+    100% {
+        top: 5em;
+    }
+}
+
+nebext-popup.displayed {
+    animation: woosh-in 300ms ease-in-out;
 }
 
 nebext-x {
     position: absolute;
-    top: 0rem;
-    right: 1rem;
+    top: -1rem;
+    right: -1rem;
+    height: 2em;
+    width: 2em;
     font-size: 3em;
+    text-align: center;
+    line-height: 2;
     color: #ddd;
     cursor: pointer;
+    /* background-color: rgba(0,0,0,0);
+    border-radius: 100%;
+    transition: background-color var(--transition-speed); */
 }
+
+/* nebext-x:hover {
+    background-color: rgba(0,0,0,0.04);
+} */
 
 nebext-star svg {
     position: relative;
@@ -42,11 +67,16 @@ nebext-popup button {
     height: 3em;
     width: 100%;
     margin-top: 1rem;
-    
+    opacity: 1;
     color: white;
     font-weight: bold;
-
     cursor: pointer;
+    transition: opacity var(--transition-speed);
+}
+
+nebext-popup button:hover,
+nebext-popup button:focus {
+    opacity: 0.8;
 }
 
 nebext-popup h1, nebext-popup h2 {

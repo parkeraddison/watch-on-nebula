@@ -72,6 +72,7 @@ window.extensionPopup = null;
 function closePopup() {
     console.log('CLOSING POPUP');
     window.extensionPopup.style.visibility = 'hidden';
+    window.extensionPopup.classList.remove('displayed');
 }
 
 function drawPopup(creatorName, videoTitle, href) {
@@ -80,10 +81,12 @@ function drawPopup(creatorName, videoTitle, href) {
         window.extensionPopup.querySelector('nebext-name').innerText = creatorName;
         window.extensionPopup.querySelector('nebext-title').innerText = videoTitle;
         window.extensionPopup.querySelector('a').href = href;
+        window.extensionPopup.classList.add('displayed');
         window.extensionPopup.style.visibility = 'visible';
     } else {
         console.log('CREATING POPUP');
         let extensionPopup = document.createElement('nebext-popup');
+        extensionPopup.classList.add('displayed');
         extensionPopup.innerHTML = `
         <nebext-x>&times</nebext-x>
         <nebext-star>
@@ -100,7 +103,7 @@ function drawPopup(creatorName, videoTitle, href) {
         </svg>
         </nebext-star>
         <h1><nebext-name>${creatorName}</nebext-name> is on Nebula!</h1>
-        <h2>You can watch <nebext-title>${videoTitle}</nebext-title> over there.</h2>
+        <h2>You can watch <nebext-title>${videoTitle}</nebext-title> over there to support the creator more directly!</h2>
         <a href="${href}"><button>WATCH ON NEBULA</button></a>
         `
         document.body.insertAdjacentElement('afterbegin', extensionPopup);
