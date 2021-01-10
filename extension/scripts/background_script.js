@@ -60,10 +60,11 @@ function checkCreator(message, sender) {
                 // search by creators yet.
                 //
                 // The alternative is to just link to the creator's page.
+                let query = encodeURIComponent(`${data.title} ${message.videoTitle}`);
                 browser.tabs.sendMessage(sender.tab.id, {
                     'creatorName': data.title,
                     'videoTitle': message.videoTitle,
-                    'href': `https://watchnebula.com/search?q=${encodeURIComponent(message.videoTitle)}`
+                    'href': `https://watchnebula.com/search?q=${query}`
                     // 'href': data.nebula
                 })
             }
