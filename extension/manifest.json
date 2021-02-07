@@ -28,8 +28,6 @@
 		}
 	],
 	"permissions": [
-		"https://www.youtube.com/",
-		"https://youtube.com/",
 		"https://standard.tv/"
 	]
 }

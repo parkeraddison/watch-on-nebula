@@ -14,9 +14,9 @@ Whenever you load a YouTube video, this extension will check if the creator is p
 
 ## How to use
 
-Simply add the extension from the official site correponding to your browser.
+Simply add the extension from the official site corresponding to your browser.
 
-- **Firefox**: [link - todo]
+- **Firefox**: https://addons.mozilla.org/en-US/firefox/addon/watch-on-nebula/
 - **Chrome**: [link - todo]
 
 That's it!
@@ -51,4 +51,4 @@ Any feature requests or ideas for modifications and/or bug fixes? Post an issue!
 
 ### Developing
 
-If you're using Firefox to develop, you can clone this repository then run `npm install` from a terminal in the root directory. From there, you can run `npm run start` to create a firefox instance with the extension installed.
+If you're using Firefox to develop, you can clone this repository then run `npm install` from a terminal in the root directory. From there, you can run `npm run start` to create a Firefox instance with the extension installed.
