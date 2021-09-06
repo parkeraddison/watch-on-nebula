@@ -1,3 +1,10 @@
+
+---
+
+**⚠ Development on this extension is paused, go check out the work being done over at [cpiber/NebulaEnhance](https://github.com/cpiber/NebulaEnhance) :)**
+
+---
+
 <img src="./docs/media/watchonnebula.png" align="right" />
 
 # 'Watch on Nebula' extension
